@@ -9,12 +9,9 @@
 	},
 	"dependencies": {
 		"next": "10.2.0",
-		"next-plugin-preact": "^3.0.4",
-		"preact": "^10.5.13",
-		"preact-render-to-string": "^5.1.19",
-		"react": "preact-compat/react",
-		"react-dom": "preact-compat/react-dom",
-		"react-ssr-prepass": "preact-ssr-prepass",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-ssr-prepass": "^1.4.0",
 		"sass": "^1.32.13"
 	},
 	"devDependencies": {
