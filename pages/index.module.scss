@@ -1,0 +1,30 @@
+.model-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 30px;
+	height: 50vh;
+	min-height: 410px;
+
+	a {
+		display: inline-block;
+		border: 2px solid var(--fg-color);
+		font-family: inherit;
+		font-size: var(--size-body);
+		border-radius: 5px;
+		padding: 25px 10px;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	a:active,
+	a:hover {
+		color: var(--bg-color);
+		background-color: var(--fg-color);
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}

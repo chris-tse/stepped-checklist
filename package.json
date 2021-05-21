@@ -1,0 +1,25 @@
+{
+	"name": "tesla-delivery-checklist",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"next": "10.2.0",
+		"next-plugin-preact": "^3.0.4",
+		"preact": "^10.5.13",
+		"preact-render-to-string": "^5.1.19",
+		"react": "preact-compat/react",
+		"react-dom": "preact-compat/react-dom",
+		"react-ssr-prepass": "preact-ssr-prepass",
+		"sass": "^1.32.13"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.6",
+		"prettier": "^2.3.0",
+		"typescript": "^4.2.4"
+	}
+}

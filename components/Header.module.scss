@@ -1,0 +1,18 @@
+.header {
+	position: fixed;
+	width: 100%;
+	background-color: var(--bg-color);
+	transition: color linear var(--transition-duration);
+	transition: background-color linear var(--transition-duration);
+
+	.layout {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 15px 0;
+	}
+
+	p {
+		font-family: 'Montserrat', sans-serif;
+		text-transform: uppercase;
+	}
+}

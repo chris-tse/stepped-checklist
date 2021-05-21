@@ -1,0 +1,59 @@
+@import './breakpoints.scss';
+
+:root {
+	--mode: light;
+	--bg-color: white;
+	--fg-color: #222;
+	--size-body: 1.6rem;
+	--size-h1: 3rem;
+	--transition-duration: 100ms;
+
+	--tablet: 400px;
+
+	font-size: 62.5%;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--mode: dark;
+		--bg-color: black;
+		--fg-color: white;
+	}
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: var(--size-body);
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	transition: color linear var(--transition-duration);
+	transition: background-color linear var(--transition-duration);
+}
+
+h1 {
+	font-size: var(--size-h1);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+	max-width: 400px;
+	padding: 50px 15px;
+}
+
+@media screen and (min-width: $tablet) {
+	main {
+		max-width: 800;
+		margin: 0 auto;
+	}
+}
