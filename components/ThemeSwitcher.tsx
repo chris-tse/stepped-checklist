@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Sun from './icons/Sun'
 import Moon from './icons/Moon'
 
 import styles from './ThemeSwitcher.module.scss'
 
 export default function ThemeSwticher() {
-	const [Icon, setIcon] = useState(() => {
-		if (typeof window !== 'undefined') {
-			const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-			return isDark ? Sun : Moon
-		}
-	})
+	const [mode, setMode] = useState<'light' | 'dark'>('light')
+
+	useEffect(() => {
+		const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+		setMode(isDark ? 'dark' : 'light')
+	}, [])
 
 	function handleThemeChange() {
 		const root = document.querySelector(':root') as HTMLHtmlElement
@@ -20,19 +21,21 @@ export default function ThemeSwticher() {
 			root.style.setProperty('--mode', 'dark')
 			root.style.setProperty('--fg-color', 'white')
 			root.style.setProperty('--bg-color', 'black')
-			setIcon(() => Sun)
+			setMode('dark')
 		} else if (mode === 'dark') {
 			root.style.setProperty('--mode', 'light')
 			root.style.setProperty('--fg-color', '#222')
 			root.style.setProperty('--bg-color', 'white')
-			setIcon(() => Moon)
+			setMode('light')
 		}
 	}
+
+	const icon = mode === 'light' ? <Moon /> : <Sun />
 
 	return (
 		<div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
 			<button className={styles.switcher} onClick={handleThemeChange}>
-				<Icon />
+				{icon}
 			</button>
 		</div>
 	)
